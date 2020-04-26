@@ -8,10 +8,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+const PORT = 8081;
 const server = http.createServer(app);
  
 const websocketOptions = {
-    port: 8080 // we will accept connections to this port
+    port: PORT // we will accept connections to this port
 };
  
 const guacdOptions = {
@@ -36,4 +37,4 @@ const clientOptions = {
  
 const guacServer = new GuacamoleLite(websocketOptions, guacdOptions, clientOptions);
 //const guacServer = new GuacamoleLite({server}, guacdOptions, clientOptions);
-//server.listen(8080);
+//server.listen(PORT);
